@@ -7,23 +7,35 @@ let bonus_grades_div = document.getElementById("bonus-grades");
 let random_grade_div = document.getElementById("random-grade");
 // لا تقم بتغيير او تخريب الكود الموجود فوق هذا الكومنت
 
+
 // طبّق الخطوة 4 في أسفل هذا الكومنت
+grades.pop()
 
 // طبّق الخطوة 5 في أسفل هذا الكومنت
+grades.push(99)
 
 // طبّق الخطوة 6 أسفل هذا الكومنت
+for (let i = 0 ; i < 14 ; i++){
+  all_grades_div.innerHTML += `<div>${grades[i]}</div>`;
+}
+
 
 
 
 function search() {
   let inputValue = document.getElementById("input").value;
-  
   // طبّق الخطوة 7 أسفل هذا الكومنت
-  
+  let filteredGrade = grades.filter((x) => x == inputValue);
+  console.log(filteredGrade)
+  if (inputValue != filteredGrade ){
+    console.log('الدرجة غير موجودة')
+  }
 }
-
+  
 // طبّق الخطوة 8 و 9 أسفل هذا الكومنت
+let randomIndex = Math.floor(Math.random() * grades.length)
 
 // طبّق الخطوة 10 أسفل هذا الكومنت
+random_grade_div.innerHTML = `<div>${grades[randomIndex]}</div>`;
 
 
